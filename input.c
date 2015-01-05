@@ -165,7 +165,7 @@ void button_autorepeat(u8 btn) {
 /** @brief
  *    FIXME
  *  @detailed
- *    FIXME
+ *    MJW Flipped ENTER and BACK because my enter button does not work well.
  *  @returns
  *  @retval
  *    FIXME
@@ -173,9 +173,11 @@ void button_autorepeat(u8 btn) {
 static u16 read_key_matrix(void) {
     u16 btn = 0;
     button_row(B, 4, BTN_TRIM_LEFT,  BTN_TRIM_CH3_L, BTN_END);
-    button_row(B, 5, BTN_TRIM_RIGHT, BTN_TRIM_CH3_R, BTN_BACK);
+    button_row(B, 5, BTN_TRIM_RIGHT, BTN_TRIM_CH3_R, BTN_ENTER);
+/*    button_row(B, 5, BTN_TRIM_RIGHT, BTN_TRIM_CH3_R, BTN_BACK); */
     button_row(D, 3, BTN_TRIM_FWD,   BTN_DR_R,       0);
-    button_row(C, 4, BTN_TRIM_BCK,   BTN_DR_L,       BTN_ENTER);
+    button_row(C, 4, BTN_TRIM_BCK,   BTN_DR_L,       BTN_BACK);
+/*    button_row(C, 4, BTN_TRIM_BCK,   BTN_DR_L,       BTN_ENTER);*/
     return btn;
 }
 
